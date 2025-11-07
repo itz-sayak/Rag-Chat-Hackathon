@@ -5,4 +5,6 @@ __pycache__/
 *.pyc
 env.*
 .env
+train_validation_inference/checkpoint-800/
+dataset-20251107T180911Z-1-001/
 

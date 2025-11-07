@@ -1,0 +1,4 @@
+[
+  "tests/test_groqllm.py::test_groqllm_call",
+  "tests/test_rag_retrieval.py::test_chunk_text_basic"
+]
