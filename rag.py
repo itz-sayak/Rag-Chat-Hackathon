@@ -5,7 +5,7 @@ and Groq Llama-4 via the groq-client.
 Usage:
   - Create a virtualenv and install from requirements.txt
   - Set env var GROQ_API_KEY to your Groq key
-  - Optionally set GROQ_MODEL (defaults to "llama-4-maverick")
+  - Optionally set GROQ_MODEL (defaults to "meta-llama/llama-4-maverick-17b-128e-instruct")
   - Run: python rag.py
 
 This script:
@@ -46,11 +46,63 @@ DATA_DIR = Path("DATA") / "invoice json"
 CHROMA_DIR = Path(".chroma")
 
 # Model default name
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-4-maverick")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "meta-llama/llama-4-maverick-17b-128e-instruct")
 
 
 def load_json_files(folder: Path) -> List[Document]:
     docs = []
+    # Prefer a single combined file `data.json` if present (supports JSON array or JSONL)
+    combined = folder / "data.json"
+    if combined.exists():
+        try:
+            text = combined.read_text(encoding="utf-8")
+        except Exception as e:
+            print(f"Failed to read {combined}: {e}")
+        else:
+            # Try to parse as a JSON array first
+            try:
+                arr = json.loads(text)
+                if isinstance(arr, list):
+                    records = arr
+                else:
+                    records = [arr]
+            except Exception:
+                # Fallback: treat file as JSONL (one JSON object per line)
+                records = []
+                for i, line in enumerate(text.splitlines()):
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        records.append(json.loads(line))
+                    except Exception as e:
+                        print(f"Skipping invalid JSON line {i+1} in {combined}: {e}")
+
+            # Convert each record to a Document
+            for idx, raw in enumerate(records):
+                parts = []
+                def walk(obj, prefix=""):
+                    if isinstance(obj, dict):
+                        for k, v in obj.items():
+                            walk(v, prefix=prefix + k + ": ")
+                    elif isinstance(obj, list):
+                        for i, v in enumerate(obj):
+                            walk(v, prefix=prefix + f"[{i}] ")
+                    else:
+                        parts.append(prefix + str(obj))
+
+                walk(raw)
+                doc_text = "\n".join(parts)
+                # Prefer using an `image` field for source if available
+                src = None
+                if isinstance(raw, dict):
+                    src = raw.get("image") or raw.get("source")
+                metadata = {"source": str(src) if src else f"data.json:record-{idx}"}
+                docs.append(Document(page_content=doc_text, metadata=metadata))
+        # return early if we used the combined file
+        return docs
+
+    # Otherwise, fall back to scanning individual .json files in the folder
     for p in sorted(folder.glob("*.json")):
         try:
             raw = json.loads(p.read_text(encoding="utf-8"))
@@ -129,6 +181,7 @@ class GroqLLM:
 
     def _call(self, prompt: str, stop=None) -> str:
         import requests, time
+        from datetime import datetime
 
         groq_key = os.getenv("GROQ_API_KEY")
         if not groq_key:
@@ -151,27 +204,62 @@ class GroqLLM:
         }
 
         attempts = int(os.getenv("GROQ_RETRIES", "3"))
-        backoff = 2.0
+        base_backoff = float(os.getenv("GROQ_BACKOFF", "2.0"))
         last_err = None
+
+        def _sleep_with_jitter(delay):
+            # jitter up to 20%
+            import random
+            jitter = delay * 0.2 * (random.random() - 0.5) * 2
+            time.sleep(max(0.0, delay + jitter))
+
         for attempt in range(1, attempts + 1):
+            start_time = time.time()
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq API call attempt {attempt}/{attempts} | Model: {self.model_name} | Endpoint: {endpoint}")
             try:
                 resp = requests.post(endpoint, json=payload, headers=headers, timeout=60)
+                elapsed = time.time() - start_time
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq response | Status: {resp.status_code} | Time: {elapsed:.2f}s")
+                
+                # Handle rate limit responses explicitly so we can honor Retry-After
+                if resp.status_code == 429:
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] Rate limit hit (429) | Retry-After: {resp.headers.get('Retry-After', 'N/A')}")
+                    last_err = RuntimeError(f"429 Too Many Requests")
+                    # Try to respect Retry-After header if present
+                    ra = resp.headers.get("Retry-After")
+                    try:
+                        wait = float(ra) if ra is not None else base_backoff * attempt
+                    except Exception:
+                        wait = base_backoff * attempt
+                    _sleep_with_jitter(wait)
+                    continue
+
                 resp.raise_for_status()
                 data = resp.json()
                 if isinstance(data, dict) and "choices" in data and data["choices"]:
                     choice = data["choices"][0]
                     # OpenAI-style: choices[0].message.content
                     if "message" in choice and isinstance(choice["message"], dict):
-                        return choice["message"].get("content", "")
+                        content = choice["message"].get("content", "")
+                        print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq response OK | Content length: {len(content)} chars")
+                        return content
                     # Some providers also include `text`
-                    return choice.get("text", "")
+                    content = choice.get("text", "")
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq response OK | Content length: {len(content)} chars")
+                    return content
                 return json.dumps(data)
             except Exception as e:
+                elapsed = time.time() - start_time
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq API error | Time: {elapsed:.2f}s | Error: {e}")
                 last_err = e
+                # Non-transient DNS errors should break early
                 if "getaddrinfo failed" in str(e).lower():
                     break
-                time.sleep(backoff * attempt)
+                # Exponential backoff with jitter
+                delay = base_backoff * (2 ** (attempt - 1))
+                _sleep_with_jitter(delay)
 
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq API unreachable after {attempts} attempts")
         return f"[Groq API unreachable after {attempts} attempts: {last_err}]"
 
     def generate_stream(self, prompt: str, chunk_handler=None, timeout: int = 300):
@@ -180,6 +268,7 @@ class GroqLLM:
         chunk_handler: optional callable called with each chunk (for callbacks)
         """
         import requests
+        from datetime import datetime
 
         groq_key = os.getenv("GROQ_API_KEY")
         if not groq_key:
@@ -200,41 +289,81 @@ class GroqLLM:
             "stream": True,
         }
 
-        resp = requests.post(endpoint, json=payload, headers=headers, stream=True, timeout=timeout)
-        try:
-            resp.raise_for_status()
-        except Exception as e:
-            raise RuntimeError(f"Groq streaming request failed: {e}; status={getattr(resp, 'status_code', None)}")
+        # We'll attempt several retries for streaming as well, especially to handle 429s.
+        attempts = int(os.getenv("GROQ_RETRIES", "3"))
+        base_backoff = float(os.getenv("GROQ_BACKOFF", "2.0"))
 
-        # OpenAI-compatible SSE sends lines like: "data: {json}\n\n" and a final "data: [DONE]"
-        for raw in resp.iter_lines(decode_unicode=True):
-            if not raw:
-                continue
-            line = raw
-            if line.startswith("data: "):
-                line = line[len("data: ") :]
-            if line.strip() == "[DONE]":
-                break
+        def _sleep_with_jitter(delay):
+            import random, time
+            jitter = delay * 0.2 * (random.random() - 0.5) * 2
+            time.sleep(max(0.0, delay + jitter))
+
+        for attempt in range(1, attempts + 1):
+            import time
+            start_time = time.time()
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq streaming API call attempt {attempt}/{attempts} | Model: {self.model_name} | Endpoint: {endpoint}")
+            resp = requests.post(endpoint, json=payload, headers=headers, stream=True, timeout=timeout)
             try:
-                obj = json.loads(line)
-                delta_text = ""
-                if isinstance(obj, dict) and "choices" in obj and obj["choices"]:
-                    choice = obj["choices"][0]
-                    # OpenAI stream uses choices[0].delta.content
-                    if "delta" in choice and isinstance(choice["delta"], dict):
-                        delta_text = choice["delta"].get("content", "")
-                    # Some providers use text
-                    delta_text = delta_text or choice.get("text", "")
-                chunk = delta_text or ""
-            except Exception:
-                chunk = ""
+                elapsed = time.time() - start_time
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq streaming response | Status: {resp.status_code} | Connection time: {elapsed:.2f}s")
+                
+                if resp.status_code == 429:
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] Rate limit hit (429) streaming | Retry-After: {resp.headers.get('Retry-After', 'N/A')}")
+                    ra = resp.headers.get("Retry-After")
+                    try:
+                        wait = float(ra) if ra is not None else base_backoff * attempt
+                    except Exception:
+                        wait = base_backoff * attempt
+                    _sleep_with_jitter(wait)
+                    continue
 
-            if chunk_handler:
+                resp.raise_for_status()
+            except Exception as e:
+                elapsed = time.time() - start_time
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq streaming API error | Time: {elapsed:.2f}s | Error: {e}")
+                # If final attempt, raise a descriptive error
+                if attempt == attempts:
+                    raise RuntimeError(f"Groq streaming request failed: {e}; status={getattr(resp, 'status_code', None)}")
+                # otherwise backoff and retry
+                delay = base_backoff * (2 ** (attempt - 1))
+                _sleep_with_jitter(delay)
+                continue
+
+            # OpenAI-compatible SSE sends lines like: "data: {json}\n\n" and a final "data: [DONE]"
+            chunk_count = 0
+            for raw in resp.iter_lines(decode_unicode=True):
+                if not raw:
+                    continue
+                line = raw
+                if line.startswith("data: "):
+                    line = line[len("data: ") :]
+                if line.strip() == "[DONE]":
+                    break
                 try:
-                    chunk_handler(chunk)
+                    obj = json.loads(line)
+                    delta_text = ""
+                    if isinstance(obj, dict) and "choices" in obj and obj["choices"]:
+                        choice = obj["choices"][0]
+                        # OpenAI stream uses choices[0].delta.content
+                        if "delta" in choice and isinstance(choice["delta"], dict):
+                            delta_text = choice["delta"].get("content", "")
+                        # Some providers use text
+                        delta_text = delta_text or choice.get("text", "")
+                    chunk = delta_text or ""
                 except Exception:
-                    pass
-            yield chunk
+                    chunk = ""
+
+                if chunk:
+                    chunk_count += 1
+                if chunk_handler:
+                    try:
+                        chunk_handler(chunk)
+                    except Exception:
+                        pass
+                yield chunk
+            
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Groq streaming completed | Chunks received: {chunk_count}")
+            return  # Successfully streamed, exit retry loop
 
 
 def build_vectorstore(docs: List[Document]):

@@ -1,6 +1,10 @@
 import os
 from pathlib import Path
 import streamlit as st
+from dotenv import load_dotenv
+
+# Load .env at startup to ensure GROQ_API_KEY and GROQ_MODEL are available
+load_dotenv(override=True)
 
 from rag import load_json_files, build_vectorstore, run_qa, load_collection, GroqLLM
 
@@ -10,9 +14,20 @@ st.title("RAG QA over Invoice JSONs")
 
 st.write("This app loads JSON files from `DATA/invoice json/`, builds a Chroma vectorstore (persisted to .chroma), and answers questions using Groq Llama-4.")
 
+# Model selection dropdown with available Groq models
+available_models = [
+    "llama-3.1-8b-instant",
+    "llama-3-3-70b-versatile",
+    "meta-llama/llama-4-maverick-17b-128e-instruct",
+    "meta-llama/llama-4-scout-17b-16e-instruct",
+    "meta-llama/llama-guard-4-12b",
+    "meta-llama/llama-prompt-guard-2-22m",
+    "meta-llama/llama-prompt-guard-2-86m",
+]
 default_model = os.getenv("GROQ_MODEL", "meta-llama/llama-4-maverick-17b-128e-instruct")
-model_name = st.sidebar.text_input("Groq Model", value=default_model)
-st.sidebar.write("Override the model name above if needed.")
+default_index = available_models.index(default_model) if default_model in available_models else 2
+model_name = st.sidebar.selectbox("Groq Model", options=available_models, index=default_index)
+st.sidebar.write(f"Using model: `{model_name}`")
 
 # Temperature toggle (slider)
 temperature = st.sidebar.slider(
@@ -24,57 +39,26 @@ temperature = st.sidebar.slider(
     help="Lower = more deterministic, higher = more creative. 0.0 is recommended to minimize hallucinations.",
 )
 
-# Retrieval count
+# Retrieval count for context size control
 retrieval_count = st.sidebar.slider(
-    "Context Sources",
-    min_value=4,
-    max_value=20,
-    value=12,
-    step=1,
-    help="Number of document chunks to retrieve for context. More sources = broader context but slower responses.",
+    "Context Chunks",
+    min_value=8,
+    max_value=30,
+    value=16,
+    step=2,
+    help="Number of relevant invoice chunks to retrieve. More chunks = better coverage but larger prompts. Reduce if you get '413 Payload Too Large' errors.",
 )
+st.sidebar.info("💡 Using smart retrieval: only the most relevant invoice chunks are sent to the LLM to avoid payload size limits.")
 
-# Retrieval order
-retrieval_order = st.sidebar.radio(
-    "Document Order",
-    options=["Serial (by filename)", "Similarity (by relevance)"],
-    index=0,
-    help="Serial gives documents in filename order. Similarity ranks by query relevance.",
-)
-
-# System prompt presets
-SYSTEM_PROMPT_QA = (
-    "You are a cautious, factual assistant for question answering over provided documents. "
-    "Rules: 1) Use ONLY the supplied Context. 2) If the answer is not fully supported, reply exactly 'I don't know'. "
-    "3) Do NOT guess or invent facts, numbers, or citations. 4) Be concise."
-)
-
-SYSTEM_PROMPT_INVOICE = (
+# System prompt (Invoice Understanding only)
+chosen_system_prompt = (
     "You are an intelligent invoice understanding assistant. You will be given invoice data in JSON, text, or "
     "semi-structured format. The structure or field names may vary, but the underlying context is always an invoice "
     "document containing: Invoice metadata (invoice number, date); Company or vendor details; Client details; Line items "
     "(description, quantity, rate, amount, tax, total); Summary (subtotal, tax, discount, grand total); Bank or payment "
     "details; Additional notes or signatures. Your task is to: Identify and normalize these fields even if their labels "
-    "differ. Handle missing or null fields gracefully. Infer context where possible (e.g., “For BKG Office” implies "
-    "client = BKG Office). Return a consistent JSON schema with standardized keys: { \n  \"invoice_no\": \"\", \n  \"invoice_date\": \"\", \n  \"vendor_name\": \"\", \n  \"vendor_address\": \"\", \n  \"vendor_pan\": \"\", \n  \"vendor_gstin\": \"\", \n  \"client_name\": \"\", \n  \"client_address\": \"\", \n  \"items\": [ {\"description\": \"\", \"quantity\": \"\", \"rate\": \"\", \"amount\": \"\", \"total\": \"\"} ], \n  \"total_amount\": \"\", \n  \"bank_details\": {\"account_no\": \"\", \"ifsc\": \"\", \"bank_name\": \"\"}, \n  \"notes\": \"\" \n}. If any field is missing, leave it empty but don’t remove it. When responding to user queries (like “who issued invoice SEC 50?” or “list all items above ₹10,000”), use semantic understanding, not exact field names."
+    "differ. Handle missing or null fields gracefully. Infer context where possible. Return a consistent JSON schema with standardized keys and include empty fields when missing. CRITICAL: When provided with multiple documents, analyze ALL of them comprehensively. Do not stop at just a few examples."
 )
-
-prompt_mode = st.sidebar.radio(
-    "Prompt Mode",
-    options=["Invoice Understanding", "Factual QA (strict)"],
-    index=0,
-    help="Choose the system prompt to guide the model's behavior.",
-)
-chosen_system_prompt = SYSTEM_PROMPT_INVOICE if prompt_mode == "Invoice Understanding" else SYSTEM_PROMPT_QA
-
-# For invoice understanding mode, add comprehensive analysis instruction
-if prompt_mode == "Invoice Understanding":
-    chosen_system_prompt = (
-        "You are an intelligent invoice understanding assistant. CRITICAL: When provided with multiple documents, "
-        "you MUST analyze ALL of them comprehensively. Do not stop at just a few examples. Examine every document "
-        "chunk provided. When counting, comparing, or analyzing patterns, process ALL provided documents, not just a subset. "
-        "For queries about duplicates, totals, or comprehensive analysis, review every single invoice in the context before answering."
-    )
 
 if st.button("(Re)build vectorstore from JSON files"):
     with st.spinner("Loading documents and building vectorstore — this can take a while"):
@@ -108,27 +92,24 @@ if query:
                 # Update the placeholder with progressively growing text
                 placeholder.markdown("**Answer:**\n\n" + text_so_far[0])
 
-            # First, perform retrieval + build prompt using run_qa's approach but using streaming
-            # We'll implement a simple retrieval here and then stream the LLM response.
+            # Use semantic search to retrieve relevant invoice chunks from vectorstore
             from sentence_transformers import SentenceTransformer
             model = SentenceTransformer("all-MiniLM-L6-v2")
             q_emb = model.encode([query], convert_to_numpy=True)[0].tolist()
-            # Increase retrieval to get broader context from more invoice files
+            
+            # Retrieve top-k relevant chunks (configurable via sidebar slider)
             results = collection.query(query_embeddings=[q_emb], n_results=retrieval_count, include=['documents', 'metadatas'])
             docs = []
             metas = []
             if results and 'documents' in results:
-                # Combine documents with metadata for sorting
+                # Combine documents with metadata
                 doc_meta_pairs = []
                 for i, doc in enumerate(results['documents'][0]):
                     meta = results['metadatas'][0][i] if 'metadatas' in results and results['metadatas'] and results['metadatas'][0] and i < len(results['metadatas'][0]) else {}
                     doc_meta_pairs.append((doc, meta))
                 
-                # Sort based on user preference
-                if retrieval_order == "Serial (by filename)":
-                    # Sort by filename to give serial order instead of similarity-based random order
-                    doc_meta_pairs.sort(key=lambda x: x[1].get('source', ''))
-                # If "Similarity", keep the original order (already ranked by similarity)
+                # Sort by source (filename) for deterministic ordering
+                doc_meta_pairs.sort(key=lambda x: x[1].get('source', ''))
                 
                 # Extract docs and metadata in chosen order
                 for doc, meta in doc_meta_pairs:
@@ -137,25 +118,20 @@ if query:
 
             context = "\n\n".join(docs)
             
-            # Use different prompts based on the selected mode
-            if prompt_mode == "Invoice Understanding":
-                prompt = (
-                    f"You have been provided with data from {len(docs)} invoice document chunks below. "
-                    f"Analyze ALL the provided invoice data thoroughly. When answering questions about totals, "
-                    f"counts, or comparisons, examine EVERY piece of data provided, not just a subset.\n\n"
-                    f"Invoice Data (examine all {len(docs)} chunks):\n{context}\n\n"
-                    f"Question: {query}\n"
-                    f"Instructions: Review all {len(docs)} document chunks above before answering. "
-                    f"If counting or comparing, make sure to consider every invoice provided.\nAnswer:"
-                )
-            else:
-                prompt = (
-                    f"You have been provided with {len(docs)} document chunks below. "
-                    f"Answer strictly using ONLY ALL the Context provided. Examine every chunk. "
-                    f"If the Context does not contain the exact information needed, respond exactly with: I don't know. "
-                    f"Do not guess or add facts.\n\n"
-                    f"Context ({len(docs)} chunks - examine all):\n{context}\n\nQuestion: {query}\nAnswer:"
-                )
+            # Calculate approximate token count (rough estimate: 1 token ≈ 4 chars)
+            estimated_tokens = len(context) // 4
+            print(f"Context size: {len(context)} chars, ~{estimated_tokens} tokens, {len(docs)} chunks")
+            
+            # Build a single invoice-focused prompt (we always use invoice understanding mode)
+            prompt = (
+                f"You have been provided with data from {len(docs)} invoice document chunks below. "
+                f"Analyze ALL the provided invoice data thoroughly. When answering questions about totals, "
+                f"counts, or comparisons, examine EVERY piece of data provided, not just a subset.\n\n"
+                f"Invoice Data (examine all {len(docs)} chunks):\n{context}\n\n"
+                f"Question: {query}\n"
+                f"Instructions: Review all {len(docs)} document chunks above before answering. "
+                f"If counting or comparing, make sure to consider every invoice provided.\nAnswer:"
+            )
 
             # Stream chunks from the LLM and display them as they arrive
             streamed_any = False

@@ -27,6 +27,6 @@ def test_groqllm_call(monkeypatch):
 
     monkeypatch.setattr("requests.post", fake_post)
     os.environ["GROQ_API_KEY"] = "fake"
-    llm = GroqLLM(model_name="llama-4-maverick")
+    llm = GroqLLM(model_name="meta-llama/llama-4-maverick-17b-128e-instruct")
     out = llm._call("Say hi")
     assert "Hello from Groq" in out
