@@ -1,0 +1,30 @@
+{
+    "schema": {
+        "invoice_no": "d",
+        "invoice_date": null,
+        "invoice_amount": null,
+        "gstin_company": null,
+        "gstin_client": null,
+        "hsn_codes": [],
+        "items": [],
+        "summary": {
+            "subtotal": null,
+            "tax_amount": null,
+            "total_amount": null
+        }
+    },
+    "pages": [
+        {
+            "error": "Failed to find JSON",
+            "raw_output": "<s_answer>{\"Description\": \"Tax invoice d\": \"igst\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"hsn_amount\": \"998224\", \"quantity\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"998224\", \"quantity\": \"amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"hsn_amount\": \"igst\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\": null\" null\": null\": null\" null\": null\" null\": null\" null\" null\": null\" null\" null\": null\" null\" null\" null\": null\" null\" null\" null\" null\" null\": null\" null\" null\" null\" null\" null\" null\" null\" null\": null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\" null\"",
+            "heuristic_extraction": {
+                "invoice_numbers": [
+                    "d",
+                    "oice"
+                ],
+                "invoice_number_guess": "d"
+            },
+            "raw_truncated": "<s_answer>{\"Description\": \"Tax invoice d\": \"igst\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"invoice_amount\": \"hsn_amount\": \""
+        }
+    ]
+}
