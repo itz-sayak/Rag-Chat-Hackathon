@@ -1,0 +1,82 @@
+{
+  "invoice_no": "213145881",
+  "invoice_date": "26-Sep-25",
+  "company_details": {
+    "name": "KYOCERA Document Solutions India Pvt Ltd",
+    "address": "C/O FEDEX TNTB P. LTD. HIWARE-ANKURHATI, PO-SALAP, PS-DOMJUR, Howrah 711409",
+    "gstin": "19AADCK3138R1ZY",
+    "pan": "AADCK3138R",
+    "contact": [
+      {
+        "email": "kyocera.AccountReceivable@did.kyocera.com"
+      },
+      {
+        "name": "sandeep.kapoor",
+        "email": "sandeep.kapoor@did.kyocera.com",
+        "phone": "9810227478"
+      },
+      {
+        "name": "sushant.nirmal",
+        "email": "sushant.nirmal@did.kyocera.com",
+        "phone": "9910153772"
+      }
+    ],
+    "regd_office_address": "505, FIFTH FLOOR, Saraswati House, Nehru Place, New Delhi-110019"
+  },
+  "client_details": {
+    "name": null,
+    "address": "HAZARIBAGH, Jharkhand",
+    "gstin": null,
+    "billing_address": "CONFIDENTIAL",
+    "place_of_supply": "HAZARIBAGH, Jharkhand",
+    "state_code": "20"
+  },
+  "items": [
+    {
+      "description": "TASKalfa 3554ci 220-240V50/60HZ, Sr. No. W8D2Y00364\nInstalled on 27 Jan 2023\nRental Charges From 1/Apr/25 To 30/Sep/25",
+      "hsn": "997314",
+      "days": "183",
+      "rate": "7,600.00",
+      "amount": "45,600.00"
+    }
+  ],
+  "summary": {
+    "subtotal": "45,600.00",
+    "tax_amount": "8,208.00",
+    "discount": null,
+    "total_amount": "53,808.00",
+    "total_in_words": "Rs FIFTY THREE THOUSAND EIGHT HUNDRED EIGHT ONLY"
+  },
+  "bank_details": {
+    "account_holder": "KYOCERA Document Solutions India Pvt Ltd",
+    "account_number": "06937700000010",
+    "ifsc": "HDFC0000693",
+    "bank_name": "HDFC BANK LTD",
+    "account_type": "(CA)"
+  },
+  "additional_info": {
+    "irn_no": "745aaad5319593d628706467d1ad0a10d2deddbc587c29ddfd16d79cca6a59f9",
+    "payment_terms": "IN03_30 DAYS From Date of Invoice",
+    "customer_reference_no": "4830004844",
+    "gst_category": "Leasing or rental services with or without operator.",
+    "reverse_charge": "N",
+    "notes": [
+      "Kindly mention Invoice no while making payment thru UPI",
+      "Pay Digitally thru UPI",
+      "\"SUPPLY TO SEZ UNIT OR SEZ DEVELOPER FOR AUTHORISED OPERATIONS UNDER BOND OR LETTER OF UNDERTAKING WITHOUT PAYMENT OF INTEGRATED TAX\"",
+      "Please detach this slip and return with payment."
+    ],
+    "handwritten_notes": {
+      "po": "4830004844",
+      "ses": "1300690015",
+      "remark": "HAZARIBAGH RENTAL (06 MON"
+    },
+    "signed_by": "Praveen Kumar",
+    "authorisation_details": {
+      "signer": "DS KYOCERA DOCUMENT SOLUTIONS INDIA PVT LTD 1",
+      "date": "2025.09.26 17:17:58 +05:30",
+      "validity": "unknown"
+    },
+    "location": "HAZARIBAGH(Jharkhand)"
+  }
+}

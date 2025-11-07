@@ -1,0 +1,103 @@
+{
+  "invoice_no": "ACPL/2526/01199",
+  "invoice_date": "24/09/2025",
+  "po_number": "8130027394",
+  "po_date": "18/09/2025",
+  "company_details": {
+    "name": "ACCESS COMPUTECH PVT LTD",
+    "address": "504/6, G.I.D.C Estate, Makarpura, Vadodara - 390 010, Gujarat, India",
+    "gstin": "24AABCA9333J1ZQ",
+    "pan": "AABCA9333J",
+    "tan": "BRDA00978F",
+    "cin": "U72200GJ1994PTC023023",
+    "email": "baroda@acpl.ind.in",
+    "phone": "+91-265-6110900, 2633307",
+    "website": "https://www.accesscomputech.com",
+    "udyam": "UDYAM-GJ-24-0003256"
+  },
+  "client_details": {
+    "billing": {
+      "name": "ADANI ENTERPRISES LTD",
+      "address": "2nd Floor, Above Canara Bank, Magadh Complex, Matwari Hazaribagh, PIN Code: 825301, State: JHARKHAND",
+      "gstin": "20AABCA2804L1Z8",
+      "pan": "AABCA2804L",
+      "state_code": "20",
+      "contact_person": "Mr. Pankaj Kumar",
+      "contact_no": "6358952120"
+    },
+    "shipping": {
+      "name": "ADANI ENTERPRISES LTD",
+      "address": "UNIT 4010-4011, SKYLINE BUILDING, KADRU RANCHI, PIN Code: 834002, State: JHARKHAND",
+      "gstin": "20AABCA2804L1Z8",
+      "state_code": "20",
+      "contact_person": "Mr. Pankaj Kumar",
+      "contact_no": "6358952120"
+    }
+  },
+  "items": [
+    {
+      "sr_no": "1",
+      "description": "180003323\nKRONOS license for the biometric enrollment of Off-roll employees",
+      "hsn_sac": "998319",
+      "quantity": 1,
+      "uom": "NOS",
+      "rate": 25000.0,
+      "taxable_value": 25000.0,
+      "cgst_rate": 0.0,
+      "cgst_value": 0.0,
+      "sgst_rate": 0.0,
+      "sgst_value": 0.0,
+      "igst_rate": 18.0,
+      "igst_value": 4500.0
+    }
+  ],
+  "summary": {
+    "subtotal": 25000.0,
+    "tax_amount": 4500.0,
+    "tcs_amount": 0.0,
+    "total_amount": 29500.0,
+    "total_in_words": "Indian Rupees Twenty-Nine Thousand Five Hundred Only"
+  },
+  "bank_details": {
+    "account_number": "000351000185",
+    "ifsc": "ICIC0000003",
+    "bank_name": "ICICI BANK LIMITED"
+  },
+  "additional_info": {
+    "irn": "3970a4fd1341742b240302f5e7f8b5a85f4d6048886567de819f8eb250565792",
+    "vendor_code": "127731",
+    "place_of_supply": "JHARKHAND",
+    "reverse_charges": "No",
+    "terms_and_conditions": [
+      "Goods supplied against order will not be taken back.",
+      "Our responsibility ceases once the courier handover the goods.",
+      "Interest at applicable rates under MSMED act shall be charged on all delayed payments.",
+      "Covered under Open Marine Insurance.",
+      "Vide Policy No.:0830018995 Issued By TATA AIG General Insurance Company.",
+      "Transaction of sales is subject to Vadodara Jurisdiction."
+    ],
+    "declaration": "\"CERTIFIED THAT THE PARTICUARS GIVEN ABOVE/ IN THE INVOICE ARE TRUE AND CORRECT. WE ALSO DECLARE THAT WE WILL REMIT THE GST AMOUNT AND FILE APPLICABLE GST RETURNS\"",
+    "tcs_note": "TCS @0.1% as per section .206C(1H) of Income tax Act. 1961 w.e.f 01/10/2020",
+    "digital_signature": "Digitally signed by Upadhyay Ketankumar Date: 2025.09.24 11:58:35 +05:30",
+    "iso_certifications": [
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 27001:2013"
+    ],
+    "handwritten_notes": [
+      {
+        "text": "Vikash kumar.\n26/09/2025\nISCR operator",
+        "type": "signature/stamp"
+      },
+      {
+        "text": "PSH 26/9/25",
+        "type": "signature"
+      },
+      {
+        "text": "26/9/25",
+        "type": "signature"
+      }
+    ],
+    "page": "Page 1 of 1"
+  }
+}

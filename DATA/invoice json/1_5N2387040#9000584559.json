@@ -1,0 +1,82 @@
+{
+  "invoice_no": "24-25/539",
+  "invoice_date": "5-Aug-24",
+  "company_details": {
+    "name": "DHARMESH PARIKH & CO LLP",
+    "address": "303/304,\" Milestone \", Near Drive in Cinema, Opp., TV Tower, Thaltej, Ahmedabad",
+    "gstin": "24AAGFD1279G1ZM",
+    "pan": "AAGFD1279G",
+    "contact": "079-27474466; 079-27479955",
+    "email": "dharmesh@dharmeshparikh.net",
+    "state": "Gujarat, Code: 24"
+  },
+  "client_details": {
+    "name": "KHARGHAR VIKHROLI TRANSMISSION PRIVATE LIMITED",
+    "address": "6th Floor, 601, Hallmark Business Plaza, Opp. Guru Nanak Hospital, Bandra East, Mumbai",
+    "gstin": "27AAHCK6319A1ZR",
+    "state": "Maharashtra, Code: 27"
+  },
+  "items": [
+    {
+      "description": "Company Law Works\nProfessional fees in relation to certification of XBRL conversion for FY 23-24",
+      "hsn_sac": "998224",
+      "quantity": null,
+      "rate": null,
+      "amount": "6,000.00",
+      "tax_percent": null,
+      "total": null
+    },
+    {
+      "description": "Out of Pocket Exps. / Reimbursement\nReimbursment of MCA fees",
+      "hsn_sac": "998224",
+      "quantity": null,
+      "rate": null,
+      "amount": "408.00",
+      "tax_percent": null,
+      "total": null
+    }
+  ],
+  "summary": {
+    "subtotal": "6,408.00",
+    "tax_amount": "1,153.44",
+    "discount": null,
+    "total_amount": "7,561.44",
+    "tax_details": [
+      {
+        "tax_type": "IGST",
+        "taxable_value": "6,408.00",
+        "rate": "18%",
+        "amount": "1,153.44"
+      }
+    ],
+    "amount_in_words": "INR Seven Thousand Five Hundred Sixty One and Forty Four paise Only",
+    "tax_in_words": "INR One Thousand One Hundred Fifty Three and Forty Four paise Only"
+  },
+  "bank_details": {
+    "account_number": "9825037422",
+    "ifsc": "KKBK0002574",
+    "bank_name": "Kotak Mahindra Bank",
+    "branch": "MANEKBAGH, AHMEDABAD"
+  },
+  "additional_info": {
+    "irn": "69a70c5e6b4b11f10e1a59c5fa6498263c8c1943e26f-1aebeb8d61e44eea796f",
+    "ack_no": "162417923272895",
+    "ack_date": "5-Aug-24",
+    "declaration": "1. Reverse Charge - Not Applicable.\n2. Our Company MSME Reg. Number: UDYAM-GJ-01-0080684, Please pay in 45 days to avoid disallowance under section 43B(h) under Income Tax Act.",
+    "jurisdiction": "SUBJECT TO AHMEDABAD JURISDICTION",
+    "authorised_signatory": {
+      "name": "Meghna Lala",
+      "digital_signature_date": "2024.08.05 14:36:15 +05'30'"
+    },
+    "notes": [
+      "This is a Digitally Signed Invoice",
+      "e-Invoice",
+      "E. & O.E"
+    ],
+    "handwritten_notes": [
+      "9000584559",
+      "3870",
+      "(23-10-2024)"
+    ]
+  }
+}

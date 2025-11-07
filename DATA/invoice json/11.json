@@ -1,0 +1,157 @@
+{
+  "invoice_no": "123/SE/2025-24",
+  "invoice_date": "30.08.2025",
+  "company_details": {
+    "name": "ANIL KUMAR",
+    "address": "GONDALPURA BADAM BARKAGAON HAZARIBAGH 825311 34 JHARKHAND INDIA",
+    "gstin": null,
+    "pan": "EARPK80008"
+  },
+  "client_details": {
+    "name": null,
+    "address": null,
+    "gstin": null
+  },
+  "items": [
+    {
+      "description": "New Flag (For BKG Office)",
+      "quantity": "1",
+      "rate": "2500",
+      "amount": "2500",
+      "tax_percent": null,
+      "total": "2500"
+    },
+    {
+      "description": "Flag Post & Other Poies painting Work.",
+      "quantity": "1",
+      "rate": "700",
+      "amount": "700",
+      "tax_percent": null,
+      "total": "700"
+    },
+    {
+      "description": "Flex banner- Independence Day.",
+      "quantity": "1",
+      "rate": "1200",
+      "amount": "1200",
+      "tax_percent": null,
+      "total": "1200"
+    },
+    {
+      "description": "Distribution of flag bag",
+      "quantity": "200",
+      "rate": "20",
+      "amount": "4000",
+      "tax_percent": null,
+      "total": "4000"
+    },
+    {
+      "description": "Decoration work abeer flower rangoli",
+      "quantity": "1",
+      "rate": "4000",
+      "amount": "4000",
+      "tax_percent": null,
+      "total": "4000"
+    },
+    {
+      "description": "Decoration jhalar/ paper a small flags",
+      "quantity": "1",
+      "rate": "3000",
+      "amount": "3000",
+      "tax_percent": null,
+      "total": "3000"
+    },
+    {
+      "description": "Distribute gift pack pen pencil etc",
+      "quantity": "25",
+      "rate": "50",
+      "amount": "1250",
+      "tax_percent": null,
+      "total": "1250"
+    },
+    {
+      "description": "Distribute packs bundiya and Namkeen",
+      "quantity": "400",
+      "rate": "34",
+      "amount": "13600",
+      "tax_percent": null,
+      "total": "13600"
+    },
+    {
+      "description": "Dis of Refreshment Packs Office/Guest Thana/SDPO",
+      "quantity": "300",
+      "rate": "40",
+      "amount": "12000",
+      "tax_percent": null,
+      "total": "12000"
+    },
+    {
+      "description": "Dis. of Refreshment Packs Office/Guest",
+      "quantity": "250",
+      "rate": "55",
+      "amount": "13750",
+      "tax_percent": null,
+      "total": "13750"
+    },
+    {
+      "description": "Decoration of 250 water bottles & jars",
+      "quantity": "10",
+      "rate": "280",
+      "amount": "2800",
+      "tax_percent": null,
+      "total": "2800"
+    },
+    {
+      "description": "Provide-music System With 02 Soundbox",
+      "quantity": "1",
+      "rate": "3000",
+      "amount": "3000",
+      "tax_percent": null,
+      "total": "3000"
+    },
+    {
+      "description": "Decoration Work of primises Paper/cloths.",
+      "quantity": "1",
+      "rate": "2000",
+      "amount": "2000",
+      "tax_percent": null,
+      "total": "2000"
+    },
+    {
+      "description": "Provide 50 Chairs, Red carpet Tents.",
+      "quantity": "1",
+      "rate": "2500",
+      "amount": "2500",
+      "tax_percent": null,
+      "total": "2500"
+    }
+  ],
+  "summary": {
+    "subtotal": null,
+    "tax_amount": null,
+    "discount": null,
+    "total_amount": "66300"
+  },
+  "bank_details": {
+    "account_number": null,
+    "ifsc": null,
+    "bank_name": null
+  },
+  "additional_info": {
+    "notes": [
+      "Description arrangement of celebration of independence Day 2025 at Barkagaon office.",
+      "(Sixty Six Thoosand three Hundred rupees Only"
+    ],
+    "payment_terms": null,
+    "others": {
+      "SO No": "8130027174",
+      "Vendar Code": "232420",
+      "Signatures": [
+        "Vikash kumad. 23/09/25",
+        "PSH",
+        "SH 23/9/25",
+        "अनिल कुमार"
+      ]
+    }
+  }
+}

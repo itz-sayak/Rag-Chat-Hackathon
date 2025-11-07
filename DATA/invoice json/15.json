@@ -1,0 +1,61 @@
+{
+  "invoice_no": "192425000042",
+  "invoice_date": "22.09.2025",
+  "company_details": {
+    "name": "MINING TECH CONSULTANCY SERVICES LTD",
+    "address": "ADANI CORPORATE HOUSE, SHANTIGRAM,,S G HIGHWAY, AHMEDABAD-382421",
+    "gstin": "24AAPCM8658Q1ZC",
+    "pan": "AAPCM8658Q",
+    "cin": "U74999GJ2022PLC132785",
+    "state_code": "24",
+    "registered_office": "Adani Corporate House\", Shantigram, Near Vaishnav Devi Circle, S. G. Highway, Khodiyar, Ahmedabad-382421"
+  },
+  "client_details": {
+    "name": "CONFIDENTIAL",
+    "address": null,
+    "gstin": null,
+    "state_code": "21"
+  },
+  "items": [
+    {
+      "description": "Consultancy Charges\nHSN/SAC No:998622",
+      "quantity": "1.000",
+      "rate": "1,500,000.00",
+      "amount": "1,500,000.00",
+      "tax_percent": "18%",
+      "total": null,
+      "uom": "EA",
+      "per": "1"
+    }
+  ],
+  "summary": {
+    "subtotal": "1,500,000.00",
+    "tax_amount": "270,000.00",
+    "discount": null,
+    "total_amount": "1,770,000.00",
+    "total_in_words": "Rupee Seventeen Lakh Seventy Thousand Only"
+  },
+  "bank_details": null,
+  "additional_info": {
+    "notes": "Bill Against Varibale Charges",
+    "payment_terms": null,
+    "others": {
+      "po_no": "8130024742",
+      "po_date": "12.04.2025",
+      "place_of_supply": "ODISHA",
+      "irn_no": null,
+      "version": "1.1",
+      "document_type_code": "INV",
+      "transaction_mode": "Regular",
+      "reverse_charge": "N",
+      "is_service": "Y",
+      "supply_type_code": "B2B",
+      "sub_supply_type": "Supply",
+      "tax_scheme": "GST",
+      "tax_payable_on_rcm": "No",
+      "jurisdiction": "Subject to Ahmedabad Jurisdiction",
+      "page": "Page 1 of 1",
+      "digital_signature": "Digitally Signed By: DS MINING TECH CONSULTANCY SERVICES PRIVATE LIMITED 1 Mon 22-Sep-2025 12:42:56 IST Approved"
+    }
+  }
+}

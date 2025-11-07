@@ -1,0 +1,172 @@
+{
+  "invoice_no": "DKE/25-26/47",
+  "invoice_date": "25-08-2025",
+  "company_details": {
+    "name": "DK Enterprises",
+    "address": "NEAR AMARNATH MANDIR, MODERN INDIA, TANGARPALI, ROURKELA-07",
+    "gstin": "21CDVPK1386B1ZN",
+    "pan": "CDVPK1386B",
+    "phone": "9938874751, 9438372048",
+    "email": "dkenterprises.engg@gmail.com",
+    "description": "Deals In: Electrical, Civil, Mechanical Contractor & Labour Supplier, All types of Erection Job"
+  },
+  "client_details": {
+    "name": "Dre Mines",
+    "address": "Sundargarh, Odisha",
+    "work_name": "Independence day 2025 celebration at Kurmitar Iron Ore Mines, Sundargarh, Odisha",
+    "po_no": "8130027130",
+    "po_date": "21.08.2025"
+  },
+  "items": [
+    {
+      "description": "FOOD PACKET\nSnacks Namkeen-Customized Gift Box Office Requirements\nSnacks Packets for Office staff\nPacket contains: Samosa, Kachori, Namkeen Pkt Sweet Laddu Sweet Barfi",
+      "hsn_sac": "21069099",
+      "quantity": 400,
+      "rate": 50,
+      "uom": "BOX",
+      "amount": 20000,
+      "tax_percent": 18,
+      "cgst_amount": 1800,
+      "sgst_amount": 1800,
+      "total": 23600
+    },
+    {
+      "description": "FOOD PACKET\nSnacks Namkeen-Customized Gift Box Office Requirements\nSnacks Packets for Office staff SEV & Bundi packet for Damalu & Rantha School\nPacket contain: Sev 100gm, Bundi-200gm",
+      "hsn_sac": "21069099",
+      "quantity": 800,
+      "rate": 25,
+      "uom": "BOX",
+      "amount": 20000,
+      "tax_percent": 18,
+      "cgst_amount": 1800,
+      "sgst_amount": 1800,
+      "total": 23600
+    },
+    {
+      "description": "DRINKING WATER\nLitchi juice bottle Litchi/paper Boat/Fruti",
+      "hsn_sac": "22011010",
+      "quantity": 800,
+      "rate": 10,
+      "uom": "each",
+      "amount": 8000,
+      "tax_percent": 18,
+      "cgst_amount": 720,
+      "sgst_amount": 720,
+      "total": 9440
+    },
+    {
+      "description": "DRINKING WATER\nDrinking water bottles(200ml)",
+      "hsn_sac": "22011010",
+      "quantity": 800,
+      "rate": 7,
+      "uom": "each",
+      "amount": 5600,
+      "tax_percent": 18,
+      "cgst_amount": 504,
+      "sgst_amount": 504,
+      "total": 6608
+    },
+    {
+      "description": "FLAG\nIndian National Flag size 3ft x 4 ft (HXL) all weather Flag with fade resistant double stitched",
+      "hsn_sac": "63079090",
+      "quantity": 1,
+      "rate": 2000,
+      "uom": "each",
+      "amount": 2000,
+      "tax_percent": 0,
+      "cgst_amount": 0,
+      "sgst_amount": 0,
+      "total": 2000
+    },
+    {
+      "description": "BADGE\nTraining Badge Stationary items\nTricolor Indian National Fla Brass metal India Badge, Lapel Pin Badge for uniform and shirt. Material- Brass Metal",
+      "hsn_sac": "48211090",
+      "quantity": 60,
+      "rate": 40,
+      "uom": "each",
+      "amount": 2400,
+      "tax_percent": 18,
+      "cgst_amount": 216,
+      "sgst_amount": 216,
+      "total": 2832
+    },
+    {
+      "description": "CRAFT ITEM, PAPIER MACHE, DOCRATIVE PLATE\nItem: 1. Plastic flag, 2. Ballon (white, Green, Orange) 10 pkt from each, 3. Ribbon, 4. Rangoli, 5. Flower, 6. Banner",
+      "hsn_sac": "85299090",
+      "quantity": 1,
+      "rate": 5000,
+      "uom": "each",
+      "amount": 5000,
+      "tax_percent": 18,
+      "cgst_amount": 450,
+      "sgst_amount": 450,
+      "total": 5900
+    },
+    {
+      "description": "GIFT ARTICLES\nSteel Water Bottle",
+      "hsn_sac": "85167990",
+      "quantity": 14,
+      "rate": 1200,
+      "uom": "each",
+      "amount": 16800,
+      "tax_percent": 18,
+      "cgst_amount": 1512,
+      "sgst_amount": 1512,
+      "total": 19824
+    },
+    {
+      "description": "GIFT ARTICLES\nSteel Water Bottle",
+      "hsn_sac": "85167990",
+      "quantity": 14,
+      "rate": 1200,
+      "uom": "each",
+      "amount": 16800,
+      "tax_percent": 18,
+      "cgst_amount": 1512,
+      "sgst_amount": 1512,
+      "total": 19824
+    }
+  ],
+  "summary": {
+    "subtotal": 96600,
+    "cgst": 8514,
+    "sgst": 8514,
+    "igst": 0,
+    "tax_amount": 17028,
+    "round_off": 0,
+    "total_amount": 113628,
+    "total_in_words": "RUPEES ONE LAKH THIRTEEN THOUSAND SIX HUNDRED TWENTY EIGHT ONLY"
+  },
+  "bank_details": {
+    "account_number": "50200077253730",
+    "ifsc": "HDFC0007550",
+    "bank_name": "HDFC BANK LIMITED",
+    "branch_address": "GROUND FLOOR, BEHERAMAL SQUARE, INDUSTRIAL"
+  },
+  "additional_info": {
+    "notes": "The document is marked 'CONFIDENTIAL'.",
+    "payment_terms": "If the payment will not release within the time period mention on order then 0.5% interest will be charged extra on grand total for each day.",
+    "signature": {
+      "digital_signature": "Digitally signed by dharamjeet kumar Date: 2025.08.25 16:08:15 +05'30'",
+      "signed_by": "M/s DK ENTERPRISES"
+    },
+    "handwritten_notes": [
+      {
+        "text": "Received",
+        "position": "Right side"
+      },
+      {
+        "text": "GRN NO: 5004191217 dt 11/9/25",
+        "position": "Bottom"
+      },
+      {
+        "text": "Sup Sig.. Name.. R...",
+        "position": "Bottom left"
+      },
+      {
+        "text": "5004219585",
+        "position": "Center, near email"
+      }
+    ]
+  }
+}

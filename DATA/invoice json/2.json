@@ -1,0 +1,64 @@
+{
+  "invoice_no": "270",
+  "invoice_date": "27-Jul-2025",
+  "company_details": {
+    "name": "Firefly Fire Pumps Pvt. Ltd.",
+    "address": "Plot No C6,C7 ,MIDC Gokul Shirgaon, Kolhapur 416234 Maharashtra India",
+    "gstin": "27AAACF8139N1Z6",
+    "pan": "AAACF8139N",
+    "email": "sales@fireflypumps.com",
+    "cin": "U29120PN2003PTC018632"
+  },
+  "client_details": {
+    "name": "CONFIDENTIAL",
+    "address": "CONFIDENTIAL",
+    "gstin": "CONFIDENTIAL",
+    "state": "CONFIDENTIAL"
+  },
+  "items": [
+    {
+      "description": "Trailer Fire Fighting Pump MFT 1800 D With Accessories\nSerial No: T50127",
+      "hsn_sac": "84137010",
+      "quantity": "1.00",
+      "rate": "780000.00",
+      "uom": "NOS",
+      "amount": "780,000.00",
+      "tax_percent": "18%",
+      "discount_percent": "0.00%",
+      "total": "780,000.00"
+    }
+  ],
+  "summary": {
+    "subtotal": "780,000.00",
+    "tax_amount": "140400.00",
+    "discount": "0.00",
+    "total_amount": "920400.00",
+    "tcs_amount": "0.00",
+    "rounding_off": "0.00",
+    "amount_in_words": "Nine lakhs Twenty Thousand Four Hundred only",
+    "tax_amount_in_words": "One lakhs Forty Thousand Four Hundred Only"
+  },
+  "bank_details": {
+    "account_number": "04340200000285",
+    "ifsc": "BARBOSHIKOL",
+    "bank_name": "Bank Of Baroda",
+    "branch": "KOP"
+  },
+  "additional_info": {
+    "customer_ref": "PO-5130010213 Dt 27/05/2025",
+    "payment_terms": "30 Days after recipt of Material",
+    "notes": "Subject to Kolhapur Jurisdiction N.B. If Payment is not made within due date, interest@ 24% will be charged",
+    "irn_no": "4dc7355cf8dad9b5a57da769355e3d1ba2cc2126bf9790173061ae8b7a4e8503",
+    "irn_date": "27-07-2025",
+    "acknowledge_no": "122527818280352",
+    "project_name": "Non-Project",
+    "invoice_type": "Original Invoice",
+    "handwritten_notes": [
+      "2731",
+      "50041437"
+    ],
+    "certification": "certified that the particulars given above are true and correct For,FIREFLY FIRE PUMPS PVT.LTD.",
+    "printed_by": "Printed by SAP Business One",
+    "page": "Page 1 of 1"
+  }
+}

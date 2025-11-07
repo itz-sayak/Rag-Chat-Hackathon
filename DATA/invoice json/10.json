@@ -1,0 +1,49 @@
+{
+  "invoice_no": "123/SE/2025-26",
+  "invoice_date": "2025-09-18",
+  "company_details": {
+    "name": "SARKAR ENTERPRISES",
+    "address": "Kadru, Subhash Colony, 192/8/B, P.S. Argora, P.O. Doranda, Ranchi 834002",
+    "gstin": null,
+    "pan": null,
+    "contact": "8102737872"
+  },
+  "client_details": {
+    "name": null,
+    "address": null,
+    "gstin": null
+  },
+  "items": [
+    {
+      "description": "Monthly rental charge for hiring of DG from April 2025 to August 2025.",
+      "quantity": "5",
+      "rate": "11000.00",
+      "amount": "55000.00",
+      "tax_percent": null,
+      "total": null
+    }
+  ],
+  "summary": {
+    "subtotal": null,
+    "tax_amount": null,
+    "discount": null,
+    "total_amount": "55000.00"
+  },
+  "bank_details": {
+    "account_holder_name": "SARKAR ENETERPRISES",
+    "account_number": "7864951215",
+    "ifsc": "IDIB000R588",
+    "bank_name": "Indian Bank",
+    "branch": "Upper Bazar, Ranchi",
+    "upi_id": "8102737872@ybl"
+  },
+  "additional_info": {
+    "notes": "Total in words- RUPEES FIFTY FIVE THOUSAND ONLY.",
+    "payment_terms": null,
+    "others": {
+      "title": "BILL",
+      "stamp": "CONFIDENTIAL",
+      "signature": "For SARKAR ENTERPRISES"
+    }
+  }
+}

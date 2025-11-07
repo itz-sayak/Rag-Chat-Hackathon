@@ -1,0 +1,66 @@
+{
+  "invoice_no": "SBD/25-26/197",
+  "invoice_date": "20-Aug-25",
+  "company_details": {
+    "name": "ISKO ENGINEERING PVT. LTD.",
+    "address": "PLOT NO.715-716.GIDC PALEJ, PALEJ, DIST - BHARUCH - 392220, GUJARAT",
+    "gstin": "24AAGC19537F1ZG",
+    "pan": null
+  },
+  "client_details": {
+    "name": "CONFIDENTIAL",
+    "address": "CONFIDENTIAL",
+    "gstin": "CONFIDENTIAL",
+    "shipping_address": "MUNDRA, KUTCH"
+  },
+  "items": [
+    {
+      "description": "BASKET",
+      "quantity": "6.00",
+      "rate": "1,70,632.00",
+      "amount": "10,23,792.00",
+      "tax_percent": "18",
+      "total": null,
+      "hsn": "84049000"
+    }
+  ],
+  "summary": {
+    "subtotal": "10,23,792.00",
+    "tax_amount": "1,84,282.56",
+    "discount": null,
+    "total_amount": "12,08,075.00",
+    "round_off": "0.44",
+    "cgst": "92,141.28",
+    "sgst": "92,141.28"
+  },
+  "bank_details": {
+    "account_number": "773251000002",
+    "ifsc": "ICIC0007732",
+    "bank_name": "ICICI BANK CC A/C",
+    "branch_name": "DARBAR CHOKDI BRANCH"
+  },
+  "additional_info": {
+    "irn": "8ed56103e0b002dfcd15f996c257a41863b4585816dcb15c-2e4615b9b9957e96",
+    "ack_no": "162521701265882",
+    "ack_date": "20-Aug-25",
+    "e-way_bill_no": "631955836642",
+    "delivery_note_no": "197",
+    "reference_no_date": "SBD/25-26/197 dt. 20-Aug-25",
+    "buyer_order_no": "5130009715",
+    "order_date": "5-Mar-25",
+    "delivery_note_date": "20-Aug-25",
+    "dispatched_through": "BY ROAD",
+    "lr_rr_no": "7200 dt. 20-Aug-25",
+    "motor_vehicle_no": "GJ27TF1809",
+    "total_in_words": "INR Twelve Lakh Eight Thousand Seventy Five Only",
+    "tax_in_words": "INR One Lakh Eighty Four Thousand Two Hundred Eighty Two and Fifty Six paise Only",
+    "declaration": "MARINE POLICY NO: - 6520020289 MSME NO :- UDYAM-GJ-24-0086528",
+    "jurisdiction": "SUBJECT TO VADODARA JURISDICTION",
+    "notes": "This is a Computer Generated Invoice",
+    "payment_terms": "30 DAYS",
+    "handwritten_notes": [
+      "5000426402",
+      "5004206639"
+    ]
+  }
+}

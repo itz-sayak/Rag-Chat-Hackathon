@@ -1,0 +1,56 @@
+{
+  "invoice_no": "AEL2526/14/657",
+  "invoice_date": "24-Sep-25",
+  "company_details": {
+    "name": "Neudesic Technologies Private Limited",
+    "address": "10th Floor, Jyothi Pinnacle Hitech City Road, Laxmi Cyber City Whitefields, Kondapur Hyderabad - 500 081",
+    "gstin": "36AACCN4087B1ZN",
+    "pan": "AACCN4087B",
+    "cin": "U72100DL2006PTC156140",
+    "state": "Telangana, Code: 36"
+  },
+  "client_details": {
+    "name": "CONFIDENTIAL",
+    "address": null,
+    "gstin": null,
+    "state": "Gujarat, Code: 24"
+  },
+  "items": [
+    {
+      "description": "IT Consulting Services",
+      "hsn_sac": "998513",
+      "quantity": null,
+      "rate": null,
+      "amount": "25,23,065.00",
+      "tax_percent": "18",
+      "total": null
+    }
+  ],
+  "summary": {
+    "subtotal": "25,23,065.00",
+    "tax_amount": "4,54,151.70",
+    "discount": null,
+    "total_amount": "29,77,216.70",
+    "amount_in_words": "INR Twenty Nine Lakh Seventy Seven Thousand Two Hundred Sixteen and Seventy paise Only",
+    "tax_amount_in_words": "INR Four Lakh Fifty Four Thousand One Hundred Fifty One and Seventy paise Only"
+  },
+  "bank_details": {
+    "account_holder_name": "Neudesic Technologies Private Limited",
+    "account_number": "05452320000161",
+    "ifsc": "HDFC 0000545",
+    "bank_name": "HDFC Bank Limited",
+    "branch": "Opp Cyber Pearl, Madhapur, Hyderabad"
+  },
+  "additional_info": {
+    "irn": "411b68e273c3bb52b06baad3e6448461eb5cc2f8cda2-7cfd8542088cedb2646c",
+    "ack_no": "112526878270351",
+    "ack_date": "24-Sep-25",
+    "buyer_order_no": "8130021311",
+    "buyer_order_date": "30-Oct-24",
+    "payment_terms": "30 Days",
+    "place_of_supply": "Gujarat",
+    "remarks": "Charges towards IT Consulting services provided for ANR CEO Dashboard - Milestone 2",
+    "authorised_signatory": "Adapa V Ramasubbaiah",
+    "notes": "E. & O.E\nThis is a Computer Generated Invoice"
+  }
+}

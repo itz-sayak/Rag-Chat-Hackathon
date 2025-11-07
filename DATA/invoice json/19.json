@@ -1,0 +1,60 @@
+{
+  "invoice_no": "2025-26/5700",
+  "invoice_date": "15-Sep-25",
+  "company_details": {
+    "name": "CONVENTUS TECHNOLOGIES PVT LTD",
+    "address": "UNIT 812, NEELKANTH CORPORATE PARK, KIROL ROAD, VIDYAVIHAR WEST, MUMBAI",
+    "gstin": "27AADCC8181E1ZN",
+    "pan": "AADCC8181E",
+    "contact": "sales@conventus.in"
+  },
+  "client_details": {
+    "name": null,
+    "address": null,
+    "gstin": null
+  },
+  "items": [
+    {
+      "description": "CISCO SERVICES\nBOQ For 00030. Licence and services fee\nItem No. 10\nCON-SNT-C9200C88 5 Qty\nC9200CX-DNAE8-5Y 5 Qty",
+      "quantity": "5.000",
+      "rate": "35,089.05",
+      "amount": "1,75,445.25",
+      "tax_percent": "18",
+      "hsn_sac": "998311",
+      "total": null
+    }
+  ],
+  "summary": {
+    "subtotal": "1,75,445.25",
+    "tax_amount": "31,580.15",
+    "discount": null,
+    "total_amount": "2,07,025.40",
+    "total_in_words": "INR Two Lakh Seven Thousand Twenty Five and Forty paise Only",
+    "tax_in_words": "INR Thirty One Thousand Five Hundred Eighty and Fifteen paise Only"
+  },
+  "bank_details": {
+    "account_holder_name": "CONVENTUS TECHNOLOGIES PVT LTD",
+    "account_number": "558405010050028",
+    "ifsc": "UBIN0555843",
+    "bank_name": "UBI New CC A/c No. 558405010050028",
+    "branch_name": "Saki Naka"
+  },
+  "additional_info": {
+    "notes": [
+      "We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.",
+      "This is a Computer Generated Invoice",
+      "E. & O.E"
+    ],
+    "payment_terms": "30 Days",
+    "others": {
+      "SES": "1300687202",
+      "IRN": "57c03a77779db1de555d0f03a887521ddfda8c41db8-bb34d02fa0b8fad6f818f",
+      "Ack No.": "122528613780719",
+      "Ack Date": "15-Sep-25",
+      "Buyer's Order No.": "4830005307",
+      "Buyer's Order Date": "13-Aug-25",
+      "Other References": "COP NO. 2025/08/195",
+      "Authorised Signatory": "Rajesh Ram Shetty"
+    }
+  }
+}

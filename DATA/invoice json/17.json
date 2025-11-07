@@ -1,0 +1,106 @@
+{
+  "invoice_no": "IMR/25/AEL/003",
+  "invoice_date": "31-08-25",
+  "company_details": {
+    "name": "INPRAVIA MINING RESOURCES PRIVATE LIMITED",
+    "address": "C/22, Patel Park, Harmu Housing Colony Ranchi- 834002, Jharkhand, India",
+    "gstin": "20AAHCI0488C1Z1",
+    "pan": null,
+    "contact": "Tel.: 0651-3591618 / 9431105008",
+    "cin": "U08999JH2023PTC020132"
+  },
+  "client_details": {
+    "name": "CONFIDENTIAL",
+    "address": "CONFIDENTIAL",
+    "shipping_address": "Same As Bill To",
+    "gstin": null,
+    "vendor_code": "275050",
+    "email": "CONFIDENTIAL",
+    "po_number": "8130026078",
+    "po_date": null
+  },
+  "items": [
+    {
+      "description": "Ambulance (24/7)",
+      "service_no": "170002947",
+      "hsn_sac": "999315",
+      "quantity": 26,
+      "rate": 38827,
+      "amount": 38827
+    },
+    {
+      "description": "Operator 1",
+      "service_no": "190002951",
+      "hsn_sac": "998519",
+      "quantity": 26,
+      "rate": 22827,
+      "amount": 22827
+    },
+    {
+      "description": "Operator 2",
+      "service_no": "190002951",
+      "hsn_sac": "998519",
+      "quantity": 26,
+      "rate": 22827,
+      "amount": 22827
+    },
+    {
+      "description": "Technician 1",
+      "service_no": "190002421",
+      "hsn_sac": "998519",
+      "quantity": 15,
+      "rate": 24927,
+      "amount": 14381
+    },
+    {
+      "description": "Technician 2",
+      "service_no": "190002421",
+      "hsn_sac": "998519",
+      "quantity": 19,
+      "rate": 24927,
+      "amount": 18216
+    },
+    {
+      "description": "Technician 3",
+      "service_no": "190002421",
+      "hsn_sac": "998519",
+      "quantity": 10,
+      "rate": 24927,
+      "amount": 9587
+    },
+    {
+      "description": "Fuel @8KM Per Littre (Total KM Run:342, Fuel Rate: 102.38)",
+      "service_no": "170002715",
+      "hsn_sac": "998519",
+      "quantity": null,
+      "rate": null,
+      "amount": 4364
+    }
+  ],
+  "summary": {
+    "subtotal": "131029",
+    "tax_amount": "23,585.24",
+    "tax_details": [
+      {
+        "tax_name": "IGST @18%",
+        "tax_amount": "23,585.24"
+      }
+    ],
+    "discount": null,
+    "total_amount": "1,54,614",
+    "taxable_amount_in_words": "One Lakh Thirty One Thousand & Twenty Nine Only",
+    "total_amount_in_words": "One Lakh Fifty Four Thousand Six Hundred & Fourteen Only"
+  },
+  "bank_details": null,
+  "additional_info": {
+    "declaration": "We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.",
+    "jurisdiction": "SUBJECT TO RANCHI JURISDICTION",
+    "notes": "This is a Computer Generated Invoice Needs No Signature.",
+    "digital_signature": {
+      "signed_by": "MITHILESH KUMAR SINGH",
+      "date": "2025.09.08",
+      "time": "16:56:04+05'30'"
+    },
+    "authorized_signatory": "DIRECTOR"
+  }
+}

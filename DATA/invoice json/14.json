@@ -1,0 +1,361 @@
+{
+  "invoice_no": "192125000004",
+  "invoice_date": "22.09.2025",
+  "company_details": {
+    "name": "MINING TECH CONSULTANCY SERVICES LTD",
+    "address": "ZENITH TOWER, PLOT NO N6/461, KHASRA NO 453/1629, JAYADEV VIHAR, KHORDHA-751015",
+    "gstin": "21AAPCM8658Q1ZI",
+    "pan": "AAPCM8658Q",
+    "cin": "U74999GJ2022PLC132785",
+    "registered_office": "Registerd Office: Adani Corporate House\", Shantigram, Near Vaishnav Devi Circle, S. G. Highway, Khodiyar, Ahmedabad-382421",
+    "state_code": "21",
+    "place_of_supply": "ODISHA"
+  },
+  "client_details": {
+    "name": "CONFIDENTIAL",
+    "address": "CONFIDENTIAL",
+    "gstin": null
+  },
+  "items": [
+    {
+      "sno": 1,
+      "description": "MOBILISATION & DEMOBILISATION",
+      "hsn_sac": "998622",
+      "quantity": 1.0,
+      "uom": "EA",
+      "rate": 100050.0,
+      "amount": 100050.0
+    },
+    {
+      "sno": 2,
+      "description": "DRILL, VERTICAL BORE, UPTO 10 MTR",
+      "hsn_sac": "998622",
+      "quantity": 176.0,
+      "uom": "EA",
+      "rate": 1380.0,
+      "amount": 242880.0
+    },
+    {
+      "sno": 3,
+      "description": "TEST, SOIL, FREE SWELL INDEX",
+      "hsn_sac": "998622",
+      "quantity": 22.0,
+      "uom": "EA",
+      "rate": 57.5,
+      "amount": 1265.0
+    },
+    {
+      "sno": 4,
+      "description": "SHIFT, EQUIPMENT",
+      "hsn_sac": "998622",
+      "quantity": 44.0,
+      "uom": "EA",
+      "rate": 4025.0,
+      "amount": 177100.0
+    },
+    {
+      "sno": 5,
+      "description": "DRILL, ROCK",
+      "hsn_sac": "998622",
+      "quantity": 20.0,
+      "uom": "EA",
+      "rate": 3162.5,
+      "amount": 63250.0
+    },
+    {
+      "sno": 6,
+      "description": "DRILL, ROCK",
+      "hsn_sac": "998622",
+      "quantity": 195.0,
+      "uom": "EA",
+      "rate": 2875.0,
+      "amount": 560625.0
+    },
+    {
+      "sno": 7,
+      "description": "TEST, ROCK, UNCONFINED COMPRSVE STRENGTH",
+      "hsn_sac": "998622",
+      "quantity": 117.5,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 10134.38
+    },
+    {
+      "sno": 8,
+      "description": "COLLECT, DISTURBED SOIL SAMPLE, F/BORE",
+      "hsn_sac": "998622",
+      "quantity": 58.5,
+      "uom": "EA",
+      "rate": 115.0,
+      "amount": 6727.5
+    },
+    {
+      "sno": 9,
+      "description": "TEST&ANLY, WATER SAMPLE",
+      "hsn_sac": "998622",
+      "quantity": 44.0,
+      "uom": "EA",
+      "rate": 402.5,
+      "amount": 17710.0
+    },
+    {
+      "sno": 10,
+      "description": "DIG, PIT",
+      "hsn_sac": "998622",
+      "quantity": 30.0,
+      "uom": "EA",
+      "rate": 4025.0,
+      "amount": 120750.0
+    },
+    {
+      "sno": 11,
+      "description": "TEST, ELECTRIC RESISTIVITY",
+      "hsn_sac": "998622",
+      "quantity": 36.0,
+      "uom": "EA",
+      "rate": 5462.5,
+      "amount": 196650.0
+    },
+    {
+      "sno": 12,
+      "description": "TEST, SOIL, SIEVE ANALYSIS",
+      "hsn_sac": "998622",
+      "quantity": 117.0,
+      "uom": "EA",
+      "rate": 57.5,
+      "amount": 6727.5
+    },
+    {
+      "sno": 13,
+      "description": "TEST, SOIL, HYDROMET ANALYSIS",
+      "hsn_sac": "998622",
+      "quantity": 117.0,
+      "uom": "EA",
+      "rate": 57.5,
+      "amount": 6727.5
+    },
+    {
+      "sno": 14,
+      "description": "TEST, SOIL, ATTERBERG LIMITS",
+      "hsn_sac": "998622",
+      "quantity": 117.0,
+      "uom": "EA",
+      "rate": 57.5,
+      "amount": 6727.5
+    },
+    {
+      "sno": 15,
+      "description": "TEST, ROCK, SPECIFIC GRAVITY",
+      "hsn_sac": "998622",
+      "quantity": 88.0,
+      "uom": "EA",
+      "rate": 54.63,
+      "amount": 4807.44
+    },
+    {
+      "sno": 16,
+      "description": "TEST, SOIL, NATURAL MOISTURE CONTENT",
+      "hsn_sac": "998622",
+      "quantity": 59.0,
+      "uom": "EA",
+      "rate": 54.63,
+      "amount": 3223.17
+    },
+    {
+      "sno": 17,
+      "description": "TEST, SOIL, FIELD DRY DENSITY",
+      "hsn_sac": "998622",
+      "quantity": 59.0,
+      "uom": "EA",
+      "rate": 54.63,
+      "amount": 3223.17
+    },
+    {
+      "sno": 18,
+      "description": "TEST, SOIL, FREE SWELL INDEX",
+      "hsn_sac": "998622",
+      "quantity": 44.0,
+      "uom": "EA",
+      "rate": 57.5,
+      "amount": 2530.0
+    },
+    {
+      "sno": 19,
+      "description": "TEST, SOIL, CONSOLIDATION",
+      "hsn_sac": "998622",
+      "quantity": 59.0,
+      "uom": "EA",
+      "rate": 172.5,
+      "amount": 10177.5
+    },
+    {
+      "sno": 20,
+      "description": "TEST, SOIL, DIRECT SHEAR",
+      "hsn_sac": "998622",
+      "quantity": 88.0,
+      "uom": "EA",
+      "rate": 172.5,
+      "amount": 15180.0
+    },
+    {
+      "sno": 21,
+      "description": "TEST, TRIAXIAL, UNCONSOLIDATED UNDRAINED",
+      "hsn_sac": "998622",
+      "quantity": 44.0,
+      "uom": "EA",
+      "rate": 172.5,
+      "amount": 7590.0
+    },
+    {
+      "sno": 22,
+      "description": "TEST, TRIAXIAL, CONSOLIDATED UNDRAINED",
+      "hsn_sac": "998622",
+      "quantity": 22.0,
+      "uom": "EA",
+      "rate": 172.5,
+      "amount": 3795.0
+    },
+    {
+      "sno": 23,
+      "description": "TEST, TRIAXIAL, CONSOLIDATED DRAINED",
+      "hsn_sac": "998622",
+      "quantity": 22.0,
+      "uom": "EA",
+      "rate": 201.25,
+      "amount": 4427.5
+    },
+    {
+      "sno": 24,
+      "description": "ROLLING & COMPACTION, SURFACE",
+      "hsn_sac": "998622",
+      "quantity": 33.0,
+      "uom": "EA",
+      "rate": 230.0,
+      "amount": 7590.0
+    },
+    {
+      "sno": 25,
+      "description": "TEST, PILE, VERTICAL COMPRESSION",
+      "hsn_sac": "998622",
+      "quantity": 269.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 23201.25
+    },
+    {
+      "sno": 26,
+      "description": "TEST, ROCK, POINT LOAD STRENGTH INDEX",
+      "hsn_sac": "998622",
+      "quantity": 269.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 23201.25
+    },
+    {
+      "sno": 27,
+      "description": "TEST, ROCK, SATURATED MOISTURE CONTENT",
+      "hsn_sac": "998622",
+      "quantity": 116.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 10005.0
+    },
+    {
+      "sno": 28,
+      "description": "TEST, ROCK, SPECIFIC GRAVITY",
+      "hsn_sac": "998622",
+      "quantity": 116.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 10005.0
+    },
+    {
+      "sno": 29,
+      "description": "TEST, ROCK, DENSITY/UNIT WEIGHT",
+      "hsn_sac": "998622",
+      "quantity": 116.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 10005.0
+    },
+    {
+      "sno": 30,
+      "description": "TEST, ROCK, POROSITY WATER ABSORPTION",
+      "hsn_sac": "999799",
+      "quantity": 116.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 10005.0
+    },
+    {
+      "sno": 31,
+      "description": "TEST, ROCK, MODULUS OF ELASTICITY",
+      "hsn_sac": "998622",
+      "quantity": 269.0,
+      "uom": "EA",
+      "rate": 86.25,
+      "amount": 23201.25
+    },
+    {
+      "sno": 32,
+      "description": "TEST&ANLY, WATER, GROUND",
+      "hsn_sac": "998622",
+      "quantity": 44.0,
+      "uom": "EA",
+      "rate": 575.0,
+      "amount": 25300.0
+    },
+    {
+      "sno": 33,
+      "description": "TEST&ANLY, WATER, GROUND",
+      "hsn_sac": "998622",
+      "quantity": 44.0,
+      "uom": "EA",
+      "rate": 517.5,
+      "amount": 22770.0
+    },
+    {
+      "sno": 34,
+      "description": "SUBMIT, REPORT",
+      "hsn_sac": "998622",
+      "quantity": 1.0,
+      "uom": "EA",
+      "rate": 66954.0,
+      "amount": 66954.0
+    },
+    {
+      "sno": 35,
+      "description": "DRILL, BORE HOLE",
+      "hsn_sac": "998622",
+      "quantity": 394.0,
+      "uom": "EA",
+      "rate": 2415.0,
+      "amount": 951510.0
+    }
+  ],
+  "summary": {
+    "subtotal": 2756025.91,
+    "taxable_amount": 2756025.91,
+    "central_gst_9_percent": 248042.4,
+    "state_gst_9_percent": 248042.4,
+    "rounding_diff": 0.29,
+    "total_amount": 3252111.0,
+    "amount_in_words": "Rupee Thirty Two Lakh Fifty Two Thousand One Hundred Eleven Only"
+  },
+  "bank_details": null,
+  "additional_info": {
+    "po_no": "CONFIDENTIAL",
+    "notes": "Bill Against Varibale Charges",
+    "irn_no": "3f5e75c598e669bfc0ee5313e4ee428969f6829aeac790ec78a7939b27026a1d",
+    "version": "1.1",
+    "document_type_code": "INV",
+    "transaction_mode": "Regular",
+    "reverse_charge_payable": "N",
+    "is_service": "Y",
+    "supply_type_code": "B2B",
+    "sub_supply_type": "Supply",
+    "tax_scheme": "GST",
+    "signature_details": "Signature valid, Digitally Signed By: DS MINING TECH CONSULTANCY SERVICES PRIVATE LIMITED, Mon 22-Sep-2025 12:37:16 IST, Approved",
+    "jurisdiction": "Subject to Ahmedabad Jurisdiction"
+  }
+}

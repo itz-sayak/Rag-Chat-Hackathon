@@ -1,0 +1,112 @@
+{
+  "invoice_no": "UC/24-25/01630",
+  "invoice_date": "15-Mar-25",
+  "company_details": {
+    "name": "Umang Communications Private Limited",
+    "address": "Adagudam, Near Hanuman Mandir, Lokhra Road, Guwahati-781 034, Assam",
+    "gstin": "18AABCU2874Q1ZL",
+    "pan": "AABCU2874Q",
+    "cin": "U74900AS2011PTC010451",
+    "email": "accounts@umangcommunications.com",
+    "state": "Assam, Code: 18"
+  },
+  "client_details": {
+    "billing_name": "Guwahati International Airport Ltd",
+    "billing_address": "Lokpriya Gopinath Bordoloi International Airport, Borjhar, Guwahati, Kamrup, Kamrup Metropolitan, Assam, 781015",
+    "shipping_name": "Guwahati International Airport Ltd",
+    "shipping_address": "Lokpriya Gopinath Bordoloi International Airport, Borjhar, Guwahati, Kamrup, Kamrup Metropolitan, Assam, 781015",
+    "gstin": "18AASCA7552J1Z1",
+    "state": "Assam, Code: 18",
+    "place_of_supply": "Assam"
+  },
+  "items": [
+    {
+      "description": "Vinyl with Sunboard\nSize: 36x16.8 3nos",
+      "hsn_sac": "39199090",
+      "quantity": "12.600",
+      "unit": "SQF",
+      "rate": "63.00",
+      "amount": "793.80",
+      "taxable_value": "793.80",
+      "cgst_rate": "9%",
+      "cgst_amount": "71.44",
+      "sgst_rate": "9%",
+      "sgst_amount": "71.44",
+      "total_tax": "142.88"
+    },
+    {
+      "description": "Digital Printing 18%\nA4 Size Certificate Photo Print",
+      "hsn_sac": "491110",
+      "quantity": "6.000",
+      "unit": "PCS",
+      "rate": "50.00",
+      "amount": "300.00",
+      "taxable_value": "300.00",
+      "cgst_rate": "9%",
+      "cgst_amount": "27.00",
+      "sgst_rate": "9%",
+      "sgst_amount": "27.00",
+      "total_tax": "54.00"
+    },
+    {
+      "description": "Transportation-996511\nDelvery Charge",
+      "hsn_sac": "996511",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": "500.00",
+      "taxable_value": "500.00",
+      "cgst_rate": "9%",
+      "cgst_amount": "45.00",
+      "sgst_rate": "9%",
+      "sgst_amount": "45.00",
+      "total_tax": "90.00"
+    }
+  ],
+  "summary": {
+    "subtotal": "1593.80",
+    "cgst_output": "143.44",
+    "sgst_output": "143.44",
+    "tax_amount": "286.88",
+    "round_off": "0.32",
+    "total_amount": "1881.00",
+    "total_in_words": "Indian Rupees One Thousand Eight Hundred Eighty One Only",
+    "tax_amount_in_words": "Indian Rupees Two Hundred Eighty Six and Eighty Eight paise Only"
+  },
+  "bank_details": {
+    "bank_name": "Axis Bank",
+    "account_number": "911020023430502",
+    "branch": "Fancy Bazar Branch",
+    "ifsc": "UTIB0000608"
+  },
+  "additional_info": {
+    "e_invoice_details": {
+      "irn": "cf0e6ab7812c7106037a3985119d2f2d9076c9494a45b32f-71789ff9067481e0",
+      "ack_no": "182518583425976",
+      "ack_date": "15-Mar-25"
+    },
+    "page": "Page 2",
+    "invoice_title": "Tax Invoice (ORIGINAL FOR RECIPIENT)",
+    "mode_terms_of_payment": null,
+    "other_references": null,
+    "buyers_order_no": null,
+    "buyers_order_date": null,
+    "dispatch_doc_no": null,
+    "delivery_note_date": null,
+    "dispatched_through": null,
+    "destination": null,
+    "terms_of_delivery": null,
+    "notes": [
+      "Ε. & Ο.Ε",
+      "This is a Computer Generated Invoice",
+      "continued to page number 2"
+    ],
+    "declaration": "We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.",
+    "reverse_charge_applicable": "No",
+    "authorised_signatory": {
+      "name": "Bikash Jain",
+      "for": "for Umang Communications Private Limited",
+      "timestamp": "2025.03.15 13:30:53 +05'30'"
+    }
+  }
+}

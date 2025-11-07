@@ -1,0 +1,63 @@
+{
+  "invoice_no": "035/2024-2025",
+  "invoice_date": "16/11/2024",
+  "company_details": {
+    "name": "R.D.B.LOGISTICS",
+    "address": "BORAGAON GOTANAGAR GUWAHATI (ASSAM)",
+    "gstin": "18BAIB968301ZJ",
+    "pan": "BAIPB9683D",
+    "phone": "9864918417"
+  },
+  "client_details": {
+    "billing_info": {
+      "name": "GUWAHATI INTERNATIONAL AIRPORT LTD",
+      "address": "LGBI AIRPORT, KAMRUP (M) GUWAHATI, ASSAM-781015",
+      "gstin": "18AASCA7552J1Z1"
+    },
+    "shipping_info": {
+      "name": "GUWAHATI INTERNATIONAL AIRPORT LTD",
+      "address": "LGBI AIRPORT, KAMRUO METROPOLITAN, GUWAHATI, ASSAM 781015",
+      "state": "Assam"
+    },
+    "place_of_supply": "Assam"
+  },
+  "items": [
+    {
+      "description": "Traveler (Bus MPV) AS01GC4401 BCAS Office to NCS Mall Guwahati and back On Dated 16/11/2024",
+      "sac": "996601",
+      "quantity": "01",
+      "unit": "Day",
+      "rate": "7000.00",
+      "amount": "7000.00"
+    },
+    {
+      "description": "INOVA CRISTA (HR29AQ7993) BCAS Office to NCS Mall Guwahati and back On Dated 16/11/2024",
+      "sac": "996601",
+      "quantity": "01",
+      "unit": "Day",
+      "rate": "6000.00",
+      "amount": "6000.00"
+    }
+  ],
+  "summary": {
+    "subtotal": "13000.00",
+    "cgst_amount": "1170.00",
+    "sgst_amount": "1170.00",
+    "total_tax": "2340.00",
+    "total_amount": "15340.00",
+    "total_in_words": "Fifteen thousand three hundred forty only."
+  },
+  "bank_details": {
+    "account_holder_name": "Dilendra Baruah",
+    "account_number": "31635873178",
+    "ifsc": "SBIN0005240",
+    "bank_name": "SBI Garchuk"
+  },
+  "additional_info": {
+    "work_order_no": null,
+    "vendor_code": null,
+    "work_period": "16/11/2024",
+    "reverse_charge_applicable": "YES",
+    "declaration": "Certified that the particulars given above are true and correct"
+  }
+}
